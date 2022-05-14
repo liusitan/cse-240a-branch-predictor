@@ -6,7 +6,7 @@
 //  described in the README                               //
 //========================================================//
 #include <stdio.h>
-#include <math.h>
+// #include <math.h>x/x.
 #include "predictor.h"
 
 //tournament choice prediction table
@@ -96,11 +96,19 @@ uint8_t compute_tag(uint64_t bankn, uint64_t pc){
   }
   return res; 
 }
+uint64_t mypow(uint64_t x, uint64_t n){
+  uint64_t res = 1;
+  while( n >= 1){
+    res = x*res;
+    n--;
+  }
+  return res; 
+}
 uint64_t compute_index(uint64_t bankn, uint64_t pc){
   uint64_t res = pc & cpcmask;
   pc = pc >> 10; 
   res = (res ^ (pc &cpcmask));
-  uint64_t his_len = pow(2,bankn - 1) * 10 - 1;
+  uint64_t his_len = mypow(2,bankn - 1) * 10 - 1;
   uint64_t tgh = cglobal_history; 
   for(int i = his_len; i >= 0; i-= 10){
     res = res ^ (tgh & cimask);
