@@ -38,6 +38,12 @@ extern const char *bpName[];
 #define WT  2			// predict T, weak taken
 #define ST  3			// predict T, strong taken
 
+//tournament choice prediction table
+#define SL  0			// predict NT, strong not taken
+#define WL  1			// predict NT, weak not taken
+#define WG  2			// predict T, weak taken
+#define SG  3			// predict T, strong taken
+
 //------------------------------------//
 //      Predictor Configuration       //
 //------------------------------------//
