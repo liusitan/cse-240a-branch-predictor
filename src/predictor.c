@@ -9,6 +9,11 @@
 #include <math.h>
 #include "predictor.h"
 
+//tournament choice prediction table
+#define SL  0			// predict NT, strong not taken
+#define WL  1			// predict NT, weak not taken
+#define WG  2			// predict T, weak taken
+#define SG  3			// predict T, strong taken
 //
 // TODO:Student Information
 //
