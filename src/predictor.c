@@ -434,7 +434,8 @@ make_prediction(uint32_t pc)
   case GSHARE:
     return gshare_predict(pc);
   case TOURNAMENT:
-    return tournament_predict(pc);
+    // return tournament_predict(pc);
+    return TAKEN;
   case CUSTOM:
   // return custom_predict(pc);
   default:
