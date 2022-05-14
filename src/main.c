@@ -83,8 +83,7 @@ main(int argc, char *argv[])
   stream = stdin;
   bpType = STATIC;
   verbose = 0;
-  printf("main.c 86");
-  fflush(stdout); 
+  
   // Process cmdline Arguments
   for (int i = 1; i < argc; ++i) {
     if (!strcmp(argv[i],"--help")) {
