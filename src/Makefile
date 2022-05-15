@@ -7,7 +7,7 @@ all: main.o predictor.o
 main.o: main.c predictor.h
 	$(CC) $(OPTS) -c main.c
 
-predictor.o: predictor.h predictor.c
+predictor.o: predictor.h predictor.c tage.h perceptron.h
 	$(CC) $(OPTS) -c predictor.c
 
 clean:
