@@ -9,8 +9,6 @@
 // #include <math.h>x/x.
 #include "predictor.h"
 // #include <stdlib.h>
-#include "tage.h"
-#include "perceptron.h"
 // tournament choice prediction table
 #define SL 0 // predict NT, strong not taken
 #define WL 1 // predict NT, weak not taken
@@ -185,17 +183,7 @@ void init_tournament()
 }
 void init_custom()
 {
-for (int i = 0; i < 512; i++)
-    {
-      bank1[i].useful = 0;
-      bank2[i].useful = 0;
-      bank3[i].useful = 0;
-      bank4[i].useful = 0;
-      bank1[i].counter = WT;
-      bank2[i].counter = WT;
-      bank3[i].counter = WT;
-      bank4[i].counter = WT;
-    }
+
     }
 uint8_t
 gshare_predict(uint32_t pc)
