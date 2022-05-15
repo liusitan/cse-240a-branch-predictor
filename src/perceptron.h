@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#define NUMWEIGHT 128
-#define NUMTABLE 64
+#define NUMWEIGHT 23
+#define NUMTABLE 213
 #define MAXWEIGHT 31
 #define MINWEIGHT -32
 typedef struct
@@ -18,7 +18,7 @@ uint64_t tablemask = NUMTABLE - 1;
 // todo verify the table mask value
 uint64_t hash(uint32_t pc)
 {
-    return pc & tablemask;
+    return pc % NUMTABLE;
 }
 int64_t p_output(uint32_t pc)
 {
