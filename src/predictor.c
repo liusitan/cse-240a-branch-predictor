@@ -74,8 +74,8 @@ uint64_t lmask = 0xfff >> 1;
 
 
 
-#define NUMWEIGHT 23
-#define NUMTABLE 213
+#define NUMWEIGHT 93
+#define NUMTABLE 59
 #define MAXWEIGHT 31
 #define MINWEIGHT -32
 typedef struct
