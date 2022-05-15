@@ -74,7 +74,7 @@ uint64_t lmask = 0xfff >> 1;
 
 
 
-#define NUMWEIGHT 93
+#define NUMWEIGHT 89
 #define NUMTABLE 59
 #define MAXWEIGHT 31
 #define MINWEIGHT -32
