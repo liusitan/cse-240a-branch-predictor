@@ -58,7 +58,8 @@ void perceptron_train(uint32_t pc, uint8_t outcome)
 
     uint8_t pred = perceptron_predict(pc);
     int64_t y = p_output(pc);
-    if (pred != outcome || llabs(y) <= threshold)
+    y = y>0? y:-y;
+    if (pred != outcome || y<= threshold)
     {
         uint64_t tpgh = pgh;
         perceptron *sp = &candidate[hash(pc)];
