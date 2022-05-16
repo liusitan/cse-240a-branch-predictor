@@ -87,7 +87,7 @@ typedef struct
 } perceptron;
 perceptron candidate[NUMTABLE];
 uint64_t pgh = 0; //
-uint64_t pgmask = ((uint64_t)1<<63)-1;
+__uint128_t pgmask = ((__uint128_t)1<<88)-1;
 uint64_t threshold = 20;
 uint64_t tablemask = NUMTABLE - 1;
 
