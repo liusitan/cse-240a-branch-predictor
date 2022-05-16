@@ -47,14 +47,17 @@ uint8_t *bht_gshare;
 uint64_t ghistory;
 
 // tournament
+
+
 uint64_t zero = 0;
 uint64_t local_history_table[2048] = {0};
-uint64_t local_prediction[2048] = {WN};
-uint64_t global_prediction[4096] = {WN};
+uint64_t local_prediction[1024] = {WN};
+uint64_t global_prediction[2048] = {WN};
 uint64_t path = 0;
-uint64_t choice_prediction[4096] = {WL};
-uint64_t gmask = 0xfff;
-uint64_t lmask = 0xfff >> 1;
+uint64_t choice_prediction[2048] = {WL};
+uint64_t gmask = (1<<11) - 1;
+uint64_t lmask = (1<<11) -1;
+uint64_t lhmask = (1<<10) - 1;
 
 
 //------------------------------------//
@@ -372,7 +375,7 @@ void train_tournament(uint32_t pc, uint8_t outcome)
   // update local hissotry table
   //  update local predictions
   path = ((path << 1) | outcome) & gmask;
-  local_history_table[pc_lower_bits] = ((local_history_table[pc_lower_bits] << 1) | outcome) & lmask;
+  local_history_table[pc_lower_bits] = ((local_history_table[pc_lower_bits] << 1) | outcome) & lhmask;
 }
 
 
